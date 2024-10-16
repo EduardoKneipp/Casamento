@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,6 +23,8 @@
 
     <link href="css/templatemo-festava-live.css" rel="stylesheet">
 
+    
+
     <!--
 
 TemplateMo 583 Festava Live
@@ -39,34 +41,58 @@ https://templatemo.com/tm-583-festava-live
         <section class="hero-section" id="section_1">
             <div class="section-overlay"></div>
 
-            <div class="container d-flex justify-content-center align-items-center">
+            <div class="container d-flex justify-content-center">
                 <div class="row">
 
-                    <div class="col-12 mt-auto mb-5 text-center">
+                    <div class="col-12 mb-5 text-center">
                         <small>Apresentamos com orgulho!</small>
 
                         <h1 class="text-white mb-5">Casamento Bianca e Eduardo</h1>
 
                     </div>
 
-                    <div class="col-lg-12 col-12 mt-auto justify-content-center text-center">
-                        <div class="date-wrap">
-                            <h5 class="text-white">
-                                <i class="custom-icon bi-clock me-2"></i>
-                                16<sup>o</sup>, Nov 2024 às 15:30
-                            </h5>
+                    <div class="container text-center mt-3">
+                        <h2 class="text-white">Contagem Regressiva para o Casamento</h2>
+                        <div id="countdown" class="d-flex justify-content-center">
+                            <div class="time-box me-3">
+                                <h3 id="days">00</h3>
+                                <p>Dias</p>
+                            </div>
+                            <div class="time-box me-3">
+                                <h3 id="hours">00</h3>
+                                <p>Horas</p>
+                            </div>
+                            <div class="time-box me-3">
+                                <h3 id="minutes">00</h3>
+                                <p>Minutos</p>
+                            </div>
+                            <div class="time-box">
+                                <h3 id="seconds">00</h3>
+                                <p>Segundos</p>
+                            </div>
                         </div>
+                    </div>
 
-                        <div class="location-wrap mx-auto py-3 py-lg-0">
-                            <h5 class="text-white">
-                                <i class="custom-icon bi-geo-alt me-2"></i>
-                                São José dos Campos, São Paulo
-                            </h5>
-                        </div>
+                </div>
+            </div>
+            <div class="container" id="content-date-adress">
+                <div class="container text-center mt-auto">
+                    <div class="date-wrap">
+                        <h5 class="text-white">
+                            <i class="custom-icon bi-clock me-2"></i>
+                            16<sup>o</sup>, Nov 2024 às 15:30
+                        </h5>
+                    </div>
+                    
+                    <div class="lcontainer text-center mb-1">
+                        <h5 class="text-white">
+                            <i class="custom-icon bi-geo-alt me-2"></i>
+                            São José dos Campos, São Paulo
+                        </h5>
                     </div>
                 </div>
             </div>
-
+            
             <div class="video-wrap">
                 <video autoplay="" loop="" muted="" class="custom-video" poster="">
                     <source src="video/pexels-2022395.mp4" type="video/mp4">
@@ -116,12 +142,13 @@ https://templatemo.com/tm-583-festava-live
         <section class="artists-section section-padding" id="section_3">
             <div class="container">
                 <div class="row justify-content-center">
-
+        
                     <div class="col-12 text-center">
-                        <h2 class="mb-4">Quem vencerá?</h1>
-                            <p>Contribua com o que você puder, essa é a nossa “lista de presentes” </p>
-                            <p>Aqui vocês vão poder acompanhar a disputa e o resultado sai no dia do casório, 16/11/2024. Vejo vocês lá!</p>
+                        <h2 class="mb-4">Quem vencerá?</h2>
+                        <p>Contribua com o que você puder, essa é a nossa “lista de presentes” </p>
+                        <p>Aqui vocês vão poder acompanhar a disputa e o resultado sai no dia do casório, 16/11/2024. Vejo vocês lá!</p>
                     </div>
+        
                     <div class="col-lg-6 col-12 text-center">
                         <h3 class="mb-4">QR CODE DO EDU!</h3>
                         <h4 class="mb-4">Chave pix: 12981320231</h4>
@@ -131,6 +158,7 @@ https://templatemo.com/tm-583-festava-live
                             </div>
                         </div>                    
                     </div>
+        
                     <div class="col-lg-6 col-12 mt-4 mt-lg-0 text-center">
                         <h3 class="mb-4">QR CODE DA BIA!</h3>
                         <h4 class="mb-4">Chave pix: 12966665052</h4>
@@ -140,10 +168,11 @@ https://templatemo.com/tm-583-festava-live
                             </div>
                         </div>      
                     </div>
-                    <div class="col-12 text-center">
-                        <h3 class="mb-4">Assim que tiver as primeira doações</h1>
-                        <h3 class="mb-4">Ponho um gráfico aqui!</h1>
+                    <h2 style="text-align: center;">QUEM ESTÁ VENCENDO?</h2>
+                    <div class="chart-container">
+                        <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
                     </div>
+        
                 </div>
             </div>
         </section>
@@ -231,6 +260,8 @@ T e m p l a t e M o
     <script src="js/jquery.sticky.js"></script>
     <script src="js/click-scroll.js"></script>
     <script src="js/custom.js"></script>
+    <script src="js/contagem.js"></script>
+    <script src="js/grafico.js"></script>
 
 </body>
 
