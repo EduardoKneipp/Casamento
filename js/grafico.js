@@ -1,5 +1,5 @@
 var xValues = ["Edu", "Bia"];
-var yValues = [5400, 2700, 0];
+var yValues = [9300, 10700, 0];
 var barColors = ["green","red"];
 
 new Chart("myChart", {
